@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Relief Support</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #263445;
+  line-height: 1.6;
+}
+
+header {
+  background: #102b46;
+  color: white;
+  padding: 22px 7%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #102b46, #1769aa);
+  color: white;
+  padding: 85px 8%;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5vw, 52px);
+  max-width: 700px;
+  line-height: 1.2;
+}
+
+.hero p {
+  max-width: 620px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #e1ebf5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 55px 22px;
+}
+
+.section-title {
+  margin-bottom: 25px;
+  color: #102b46;
+  font-size: 28px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #e3e9ef;
+  box-shadow: 0 5px 18px rgba(0,0,0,.04);
+}
+
+.card h3 {
+  color: #1769aa;
+  margin-bottom: 12px;
+}
+
+.about {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+footer {
+  background: #102b46;
+  color: #dce5ee;
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 13px;
+}
+
+footer p {
+  margin: 6px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <div class="logo">Financial Relief Support</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <h1>Building Financial Stability and Opportunity</h1>
+  <p>
+    Explore financial assistance information, practical
+    financial guidance, and resources designed to support
+    individuals and families through challenging times.
+  </p>
+</section>
+
+<main class="container">
+
+  <h2 class="section-title" id="services">
+    Our Areas of Focus
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Financial Guidance</h3>
+      <p>
+        Learn about financial planning, responsible money
+        management, and available support resources.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Family Support</h3>
+      <p>
+        Explore information about financial challenges
+        affecting individuals and families.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Financial Education</h3>
+      <p>
+        Develop knowledge and practical skills for making
+        informed financial decisions.
+      </p>
+    </div>
+
+  </div>
+
+  <section class="about" id="about">
+    <h2 class="section-title">About Our Initiative</h2>
+    <p>
+      Our project explores how accessible financial
+      information and responsible digital services can
+      contribute to financial awareness, stability,
+      and opportunity.
+    </p>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <p>Financial Relief Support</p>
+  <p>Contact information will be provided here.</p>
+  <p>Independent training demonstration. Not affiliated with
+  any bank or government agency. No real financial assistance
+  or banking services are offered.</p>
+</footer>
+
+</body>
+</html>
