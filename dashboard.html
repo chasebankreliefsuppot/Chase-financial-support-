@@ -4,517 +4,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1930">
-<title>Nexora Financial | Global Financial Services</title>
-
+<meta name="theme-color" content="#071426">
+<title>Dashboard | Nexora Financial</title>
 <style>
-:root {
-  --navy:#0b1930;
-  --blue:#153d68;
-  --teal:#20c6b2;
-  --light:#f3f6fa;
-  --white:#fff;
-  --text:#1b2b40;
-  --muted:#718096;
-  --border:#e5ebf2;
+:root{
+  --navy:#071426;--navy2:#10243d;--teal:#21c7b7;
+  --bg:#f3f6fa;--white:#fff;--muted:#718096;
+  --border:#e4eaf1;--green:#14865d;--red:#c34b4b;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--light);
-  color:var(--text);
-}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#17263b}
 a{text-decoration:none;color:inherit}
 .layout{display:flex;min-height:100vh}
-.sidebar{
-  width:245px;
-  background:var(--navy);
-  color:white;
-  padding:28px 18px;
-  flex-shrink:0;
-}
-.brand{font-size:22px;font-weight:800;letter-spacing:.5px}
+.sidebar{width:245px;background:var(--navy);color:white;padding:27px 18px;flex-shrink:0}
+.brand{font-size:21px;font-weight:800;padding:0 12px 35px}
 .brand span{color:var(--teal)}
-.brand-sub{
-  color:#a8b7ca;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-top:7px;
-}
-.demo-side{
-  margin:28px 0;
-  padding:12px;
-  background:#142b47;
-  border:1px solid #294361;
-  border-radius:10px;
-  color:#8ee7dc;
-  font-size:11px;
-  text-align:center;
-  letter-spacing:1px;
-  font-weight:bold;
-}
-.nav-title{
-  color:#8193aa;
-  font-size:10px;
-  letter-spacing:1.5px;
-  margin:25px 10px 12px;
-}
-.nav a{
-  display:block;
-  padding:13px 12px;
-  margin:5px 0;
-  border-radius:8px;
-  color:#c4d0df;
-  font-size:14px;
-}
-.nav a:hover,.nav a.active{
-  background:#193958;
-  color:white;
-}
-.nav a.active{border-left:3px solid var(--teal)}
-.sidebar-bottom{
-  margin-top:50px;
-  padding:15px 10px;
-  border-top:1px solid #263c56;
-  color:#a8b7ca;
-  font-size:11px;
-  line-height:1.7;
-}
-.main{flex:1;min-width:0;padding:28px 34px}
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  margin-bottom:25px;
-}
-.topbar h2{font-size:22px}
-.top-right{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.demo-pill{
-  background:#e0faf5;
-  color:#087c70;
-  padding:9px 13px;
-  border-radius:30px;
-  font-size:11px;
-  font-weight:bold;
-}
-.profile{
-  width:38px;height:38px;border-radius:50%;
-  background:var(--navy);color:white;
-  display:grid;place-items:center;font-weight:bold;
-}
-.notice{
-  background:#fff8e7;
-  border:1px solid #f0dca8;
-  color:#765a18;
-  padding:13px 16px;
-  border-radius:10px;
-  font-size:12px;
-  line-height:1.6;
-  margin-bottom:24px;
-}
-.welcome{margin-bottom:24px}
-.welcome h1{font-size:25px;margin-bottom:7px}
-.welcome p{color:var(--muted);font-size:13px}
-.section-heading{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:10px;margin:25px 0 14px;
-}
-.section-heading h3{font-size:16px}
-.section-heading span{font-size:11px;color:var(--muted)}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;
-}
-.card{
-  background:white;
-  padding:21px;
-  border-radius:13px;
-  border:1px solid var(--border);
-  box-shadow:0 3px 12px rgba(20,40,70,.035);
-}
-.balance-card{
-  background:linear-gradient(125deg,#102b4c,#17617b);
-  color:white;
-  border:0;
-}
-.card-label{font-size:12px;color:var(--muted)}
-.balance-card .card-label{color:#c6dce7}
-.amount{
-  font-size:27px;font-weight:800;
-  margin:14px 0 8px;
-}
-.balance-card .amount{font-size:32px}
-.card-foot{font-size:11px;color:var(--muted)}
-.balance-card .card-foot{color:#c6dce7}
-.account-icon{
-  width:35px;height:35px;
-  display:grid;place-items:center;
-  background:#e5f8f5;color:#078d80;
-  border-radius:9px;font-size:17px;
-  margin-bottom:14px;
-}
-.account-number{
-  font-size:11px;color:var(--muted);
-  margin:10px 0;
-}
-.chart-wrap{
-  display:grid;
-  grid-template-columns:1.6fr 1fr;
-  gap:16px;
-  margin-top:16px;
-}
-.chart{
-  width:100%;height:auto;
-  margin-top:18px;
-}
-.chart-labels{
-  display:flex;justify-content:space-between;
-  color:var(--muted);font-size:10px;
-  margin-top:5px;
-}
-.insight{
-  background:#f0fbf9;
-  border:1px solid #d7f1ec;
-  padding:15px;border-radius:10px;
-  margin-top:12px;font-size:12px;line-height:1.7;
-}
-.transaction-card{margin-top:18px}
+.nav-label{font-size:10px;color:#8192a8;letter-spacing:1.5px;padding:15px 12px 9px}
+.nav a{display:block;padding:12px;border-radius:7px;color:#c4d0de;font-size:14px;margin:4px 0}
+.nav a.active,.nav a:hover{background:#19334d;color:white}
+.main{flex:1;min-width:0}
+.topbar{background:white;padding:19px 30px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:15px}
+.topbar h2{font-size:20px;color:var(--navy)}
+.profile{font-size:13px;color:var(--muted)}
+.content{padding:30px;max-width:1250px;margin:auto}
+.welcome{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:25px}
+.welcome h1{font-size:27px;color:var(--navy);margin-bottom:5px}
+.welcome p{font-size:14px;color:var(--muted)}
+.demo-tag{background:#e3f7f3;color:#087d70;border-radius:30px;padding:8px 13px;font-size:11px;font-weight:800;white-space:nowrap}
+.notice{background:#fff8e8;border:1px solid #f2dfb7;border-radius:9px;padding:13px 16px;color:#725b2b;font-size:12px;margin-bottom:23px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;margin-bottom:25px}
+.card{background:white;border:1px solid var(--border);border-radius:11px;padding:21px}
+.card small{font-size:12px;color:var(--muted)}
+.card h2{font-size:25px;color:var(--navy);margin:12px 0 5px}
+.card .sub{font-size:11px;color:var(--muted)}
+.panel{background:white;border:1px solid var(--border);border-radius:11px;padding:22px;margin-bottom:22px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.panel-head h3{font-size:17px;color:var(--navy)}
+.panel-head a{font-size:12px;color:#087f79;font-weight:700}
+.accounts{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.account{border:1px solid var(--border);border-radius:9px;padding:18px}
+.account .type{font-size:12px;color:var(--muted)}
+.account h3{font-size:22px;margin:10px 0;color:var(--navy)}
+.account .number{font-size:11px;color:var(--muted)}
+.account .status{display:inline-block;margin-top:12px;padding:5px 9px;background:#e6f6ef;color:var(--green);font-size:10px;border-radius:20px}
+.activity{display:flex;align-items:center;gap:12px}
+.activity svg{width:100%;height:auto;display:block}
+.legend{font-size:11px;color:var(--muted);margin-top:8px}
+select{border:1px solid var(--border);padding:9px;border-radius:7px;background:white;color:#26364b}
 .table-wrap{overflow-x:auto}
-table{
-  border-collapse:collapse;
-  width:100%;
-  min-width:520px;
-  margin-top:12px;
-}
-th,td{
-  padding:14px 12px;
-  text-align:left;
-  border-bottom:1px solid var(--border);
-  font-size:12px;
-}
+table{width:100%;border-collapse:collapse;min-width:600px}
+th,td{text-align:left;padding:14px 11px;border-bottom:1px solid var(--border);font-size:12px}
 th{color:var(--muted);font-weight:600}
-td{color:var(--text)}
-.status{
-  display:inline-block;
-  background:#e6f8f1;
-  color:#13845d;
-  padding:5px 9px;
-  border-radius:20px;
-  font-size:10px;
+td{color:#26364b}
+.amount.credit{color:var(--green);font-weight:700}
+.amount.debit{color:var(--red);font-weight:700}
+.status-pill{background:#e6f6ef;color:var(--green);padding:5px 8px;border-radius:20px;font-size:10px}
+.support-box{background:var(--navy2);color:white;border-radius:11px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.support-box p{font-size:13px;color:#c0ccda;margin-top:6px}
+.support-box a{background:var(--teal);color:#071426;padding:11px 15px;border-radius:7px;font-size:12px;font-weight:800;white-space:nowrap}
+footer{text-align:center;padding:22px;color:var(--muted);font-size:11px}
+@media(max-width:950px){
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .accounts{grid-template-columns:1fr}
 }
-.credit{color:#12845c;font-weight:bold}
-.debit{color:#d15b5b;font-weight:bold}
-.filter{
-  padding:9px 12px;
-  border:1px solid var(--border);
-  border-radius:8px;
-  background:white;
-  color:var(--text);
-  font-size:12px;
-}
-.bottom-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:18px;
-}
-.info-text{
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.8;
-  margin-top:10px;
-}
-.footer{
-  text-align:center;
-  color:var(--muted);
-  font-size:10px;
-  line-height:1.8;
-  padding:28px 10px 10px;
-}
-@media(max-width:900px){
-  .sidebar{width:205px}
-  .main{padding:24px 20px}
-  .cards{grid-template-columns:1fr 1fr}
-  .chart-wrap{grid-template-columns:1fr}
-}
-@media(max-width:620px){
-  .layout{display:block}
-  .sidebar{width:100%;padding:18px}
-  .brand{font-size:20px}
-  .demo-side{margin:15px 0}
-  .nav-title,.sidebar-bottom{display:none}
-  .nav{
-    display:flex;gap:5px;
-    overflow-x:auto;padding-bottom:3px;
-  }
-  .nav a{white-space:nowrap;padding:10px;font-size:12px}
-  .main{padding:20px 14px}
-  .topbar h2{font-size:18px}
-  .welcome h1{font-size:22px}
-  .cards{grid-template-columns:1fr}
-  .bottom-grid{grid-template-columns:1fr}
-  .amount{font-size:25px}
+@media(max-width:650px){
+ .layout{display:block}
+ .sidebar{width:100%;padding:17px}
+ .brand{padding:0 5px 15px}
+ .nav-label{display:none}
+ .nav{display:flex;gap:5px;overflow-x:auto}
+ .nav a{white-space:nowrap;font-size:12px;padding:10px}
+ .topbar{padding:15px 18px}
+ .content{padding:20px 15px}
+ .welcome{align-items:flex-start;flex-direction:column}
+ .welcome h1{font-size:23px}
+ .cards{gap:10px}
+ .card{padding:15px}
+ .card h2{font-size:20px}
+ .panel{padding:16px}
+ .support-box{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
-
 <body>
 <div class="layout">
 
 <aside class="sidebar">
   <div class="brand">NEXORA <span>FINANCIAL</span></div>
-  <div class="brand-sub">GLOBAL FINANCIAL SERVICES</div>
-
-  <div class="demo-side">● EDUCATIONAL DEMO ENVIRONMENT</div>
-
-  <div class="nav-title">MAIN MENU</div>
+  <div class="nav-label">MAIN MENU</div>
   <nav class="nav">
-    <a class="active" href="#overview">Overview</a>
-    <a href="#accounts">Demo Accounts</a>
+    <a class="active" href="dashboard.html">Dashboard</a>
+    <a href="index.html">Homepage</a>
+    <a href="#accounts">Accounts</a>
     <a href="#transactions">Transactions</a>
-    <a href="#insights">Financial Insights</a>
-    <a href="#settings">Settings</a>
-    <a href="index.html">Back to Homepage</a>
+    <a href="#activity">Financial Activity</a>
+    <a href="#support">Financial Support</a>
   </nav>
-
-  <div class="sidebar-bottom">
-    Nexora Financial<br>
-    Learn. Simulate. Secure.<br>
-    Independent educational platform.
-  </div>
+  <div class="nav-label">INFORMATION</div>
+  <nav class="nav">
+    <a href="index.html#about">About Nexora</a>
+    <a href="index.html#services">Learning Resources</a>
+  </nav>
 </aside>
 
 <main class="main">
-
   <header class="topbar">
-    <h2>Dashboard</h2>
-    <div class="top-right">
-      <span class="demo-pill">DEMO ONLY</span>
-      <div class="profile">N</div>
-    </div>
+    <h2>Financial Dashboard</h2>
+    <div class="profile">Nexora Financial | Learning Platform</div>
   </header>
 
-  <div class="notice">
-    <strong>Demonstration notice:</strong>
-    This platform uses fictional accounts, balances and sample transactions.
-    No real money or banking services are involved.
-  </div>
-
-  <section class="welcome" id="overview">
-    <h1>Welcome to Nexora Financial</h1>
-    <p>Explore a simulated global financial services environment.</p>
-  </section>
-
-  <div class="section-heading">
-    <h3>Financial Overview</h3>
-    <span>Fictional sample data</span>
-  </div>
-
-  <section class="cards">
-    <div class="card balance-card">
-      <div class="card-label">Total Simulated Balance</div>
-      <div class="amount">$25,750.00</div>
-      <div class="card-foot">Fictional demonstration value</div>
-    </div>
-
-    <div class="card">
-      <div class="card-label">Demo Checking</div>
-      <div class="amount">$12,500.00</div>
-      <div class="card-foot">Sample account balance</div>
-    </div>
-
-    <div class="card">
-      <div class="card-label">Demo Savings</div>
-      <div class="amount">$10,000.00</div>
-      <div class="card-foot">Sample account balance</div>
-    </div>
-  </section>
-
-  <section id="accounts">
-    <div class="section-heading">
-      <h3>Demo Accounts</h3>
-      <span>All account details are fictional</span>
-    </div>
-
-    <div class="cards">
-      <div class="card">
-        <div class="account-icon">▤</div>
-        <div class="card-label">Demo Checking Account</div>
-        <div class="amount">$12,500.00</div>
-        <div class="account-number">Reference: NX-DEMO-001</div>
-        <div class="card-foot">Educational sample account</div>
+  <div class="content">
+    <div class="welcome">
+      <div>
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Review the sample financial information and activity below.</p>
       </div>
-
-      <div class="card">
-        <div class="account-icon">◈</div>
-        <div class="card-label">Demo Savings Account</div>
-        <div class="amount">$10,000.00</div>
-        <div class="account-number">Reference: NX-DEMO-002</div>
-        <div class="card-foot">Educational sample account</div>
-      </div>
-
-      <div class="card">
-        <div class="account-icon">▥</div>
-        <div class="card-label">Demo Investment Account</div>
-        <div class="amount">$3,250.00</div>
-        <div class="account-number">Reference: NX-DEMO-003</div>
-        <div class="card-foot">Educational sample account</div>
-      </div>
+      <span class="demo-tag">EDUCATIONAL DEMO</span>
     </div>
-  </section>
 
-  <section class="chart-wrap" id="insights">
-    <div class="card">
-      <div class="section-heading">
-        <h3>Sample Financial Activity</h3>
-        <span>Illustrative only</span>
+    <div class="notice">
+      Demonstration environment: all account names, balances, references and transactions shown here are illustrative sample data. They do not represent real bank accounts, deposits or payments.
+    </div>
+
+    <section class="cards">
+      <article class="card">
+        <small>Sample Total Balance</small>
+        <h2>$25,750.00</h2>
+        <div class="sub">Illustrative demo value</div>
+      </article>
+      <article class="card">
+        <small>Sample Checking</small>
+        <h2>$12,500.00</h2>
+        <div class="sub">Educational account</div>
+      </article>
+      <article class="card">
+        <small>Sample Savings</small>
+        <h2>$10,000.00</h2>
+        <div class="sub">Educational account</div>
+      </article>
+      <article class="card">
+        <small>Sample Investment</small>
+        <h2>$3,250.00</h2>
+        <div class="sub">Illustrative portfolio</div>
+      </article>
+    </section>
+
+    <section class="panel" id="accounts">
+      <div class="panel-head">
+        <h3>Account Overview</h3>
+        <span class="demo-tag">SAMPLE DATA</span>
       </div>
+      <div class="accounts">
+        <article class="account">
+          <div class="type">Checking Account</div>
+          <h3>$12,500.00</h3>
+          <div class="number">Reference: NX-DEMO-001</div>
+          <span class="status">Sample account</span>
+        </article>
+        <article class="account">
+          <div class="type">Savings Account</div>
+          <h3>$10,000.00</h3>
+          <div class="number">Reference: NX-DEMO-002</div>
+          <span class="status">Sample account</span>
+        </article>
+        <article class="account">
+          <div class="type">Investment Account</div>
+          <h3>$3,250.00</h3>
+          <div class="number">Reference: NX-DEMO-003</div>
+          <span class="status">Sample account</span>
+        </article>
+      </div>
+    </section>
 
-      <svg class="chart" viewBox="0 0 600 190" role="img"
-           aria-label="Illustrative sample financial activity chart">
-        <g stroke="#e8edf3" stroke-width="1">
-          <line x1="35" y1="25" x2="580" y2="25"/>
-          <line x1="35" y1="70" x2="580" y2="70"/>
-          <line x1="35" y1="115" x2="580" y2="115"/>
-          <line x1="35" y1="160" x2="580" y2="160"/>
+    <section class="panel" id="activity">
+      <div class="panel-head">
+        <h3>Illustrative Financial Activity</h3>
+        <span class="sub">Sample visualization</span>
+      </div>
+      <svg viewBox="0 0 700 210" role="img" aria-label="Illustrative upward financial activity line chart">
+        <g stroke="#e7edf3" stroke-width="1">
+          <path d="M45 25H680 M45 65H680 M45 105H680 M45 145H680 M45 185H680"/>
         </g>
-        <path d="M35 135 L125 110 L215 120 L305 75 L395 90 L485 45 L575 55"
-              fill="none" stroke="#20c6b2" stroke-width="4"
-              stroke-linecap="round" stroke-linejoin="round"/>
-        <g fill="#20c6b2">
-          <circle cx="35" cy="135" r="5"/>
-          <circle cx="125" cy="110" r="5"/>
-          <circle cx="215" cy="120" r="5"/>
-          <circle cx="305" cy="75" r="5"/>
-          <circle cx="395" cy="90" r="5"/>
-          <circle cx="485" cy="45" r="5"/>
-          <circle cx="575" cy="55" r="5"/>
+        <g fill="#718096" font-size="10">
+          <text x="5" y="28">$30k</text><text x="5" y="68">$25k</text>
+          <text x="5" y="108">$20k</text><text x="5" y="148">$15k</text>
+          <text x="5" y="188">$10k</text>
+        </g>
+        <path d="M45 160 L125 140 L205 148 L285 105 L365 120 L445 85 L525 96 L605 55 L680 68 L680 185 L45 185Z" fill="#21c7b7" opacity=".12"/>
+        <path d="M45 160 L125 140 L205 148 L285 105 L365 120 L445 85 L525 96 L605 55 L680 68" fill="none" stroke="#0a9c91" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <g fill="#0a9c91">
+          <circle cx="45" cy="160" r="4"/><circle cx="125" cy="140" r="4"/>
+          <circle cx="205" cy="148" r="4"/><circle cx="285" cy="105" r="4"/>
+          <circle cx="365" cy="120" r="4"/><circle cx="445" cy="85" r="4"/>
+          <circle cx="525" cy="96" r="4"/><circle cx="605" cy="55" r="4"/>
+          <circle cx="680" cy="68" r="4"/>
         </g>
       </svg>
+      <div class="legend">Illustrative chart only — not connected to live financial data.</div>
+    </section>
 
-      <div class="chart-labels">
-        <span>Week 1</span><span>Week 2</span>
-        <span>Week 3</span><span>Week 4</span>
+    <section class="panel" id="transactions">
+      <div class="panel-head">
+        <h3>Recent Sample Transactions</h3>
+        <select id="filter" aria-label="Filter sample transactions">
+          <option value="all">All transactions</option>
+          <option value="credit">Credits</option>
+          <option value="debit">Debits</option>
+        </select>
       </div>
-    </div>
-
-    <div class="card">
-      <h3>Financial Insights</h3>
-      <div class="insight">
-        <strong>Learning point</strong><br>
-        Tracking income and expenses can help people understand their spending habits.
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-list">
+            <tr data-type="credit">
+              <td>Sample salary credit</td><td>Nov 20, 2026</td>
+              <td>Credit</td><td class="amount credit">+$3,500.00</td>
+              <td><span class="status-pill">Illustrative</span></td>
+            </tr>
+            <tr data-type="debit">
+              <td>Sample utility payment</td><td>Nov 18, 2026</td>
+              <td>Debit</td><td class="amount debit">-$250.00</td>
+              <td><span class="status-pill">Illustrative</span></td>
+            </tr>
+            <tr data-type="credit">
+              <td>Sample savings transfer</td><td>Nov 15, 2026</td>
+              <td>Credit</td><td class="amount credit">+$750.00</td>
+              <td><span class="status-pill">Illustrative</span></td>
+            </tr>
+            <tr data-type="debit">
+              <td>Sample online purchase</td><td>Nov 12, 2026</td>
+              <td>Debit</td><td class="amount debit">-$120.00</td>
+              <td><span class="status-pill">Illustrative</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="insight">
-        <strong>Security reminder</strong><br>
-        Never share passwords, PINs or one-time verification codes.
+    </section>
+
+    <section class="support-box" id="support">
+      <div>
+        <h3>Financial Support & Learning</h3>
+        <p>Explore financial education and digital security resources on the Nexora platform.</p>
       </div>
-    </div>
-  </section>
+      <a href="index.html#support">Visit Support</a>
+    </section>
+  </div>
 
-  <section class="card transaction-card" id="transactions">
-    <div class="section-heading">
-      <h3>Recent Sample Transactions</h3>
-      <select class="filter" id="transactionFilter"
-              aria-label="Filter sample transactions">
-        <option value="all">All transactions</option>
-        <option value="credit">Sample credits</option>
-        <option value="debit">Sample debits</option>
-      </select>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="transactionRows">
-          <tr data-type="credit">
-            <td>Sample Deposit</td>
-            <td>Nov 20, 2026</td>
-            <td>Credit</td>
-            <td class="credit">+$2,000.00</td>
-            <td><span class="status">Sample</span></td>
-          </tr>
-          <tr data-type="debit">
-            <td>Sample Purchase</td>
-            <td>Nov 18, 2026</td>
-            <td>Debit</td>
-            <td class="debit">-$250.00</td>
-            <td><span class="status">Sample</span></td>
-          </tr>
-          <tr data-type="credit">
-            <td>Sample Savings Transfer</td>
-            <td>Nov 15, 2026</td>
-            <td>Credit</td>
-            <td class="credit">+$500.00</td>
-            <td><span class="status">Sample</span></td>
-          </tr>
-          <tr data-type="debit">
-            <td>Sample Utility Payment</td>
-            <td>Nov 12, 2026</td>
-            <td>Debit</td>
-            <td class="debit">-$120.00</td>
-            <td><span class="status">Sample</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="bottom-grid" id="settings">
-    <div class="card">
-      <h3>Platform Information</h3>
-      <p class="info-text">
-        Nexora Financial is an independent financial education and
-        simulation platform. It provides illustrative learning materials
-        about financial services, digital security and money management.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Security & Privacy</h3>
-      <p class="info-text">
-        This demonstration does not provide real banking authentication,
-        account access, payment processing or financial transactions.
-        Never enter real banking credentials on a demonstration platform.
-      </p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    © 2026 Nexora Financial — Global Financial Services<br>
-    Learn. Simulate. Secure.<br>
-    Independent educational platform. Not affiliated with any bank,
-    financial institution or government agency.<br>
-    All balances, accounts and transactions shown are fictional.
+  <footer>
+    © 2026 Nexora Financial · Global Financial Services & Financial Support<br>
+    Independent educational platform. No real banking services or financial transactions are provided.
   </footer>
-
 </main>
 </div>
 
 <script>
-const filter = document.getElementById("transactionFilter");
-const rows = document.querySelectorAll("#transactionRows tr");
+const filter = document.getElementById("filter");
+const rows = document.querySelectorAll("#transaction-list tr");
 
-filter.addEventListener("change", function () {
-  rows.forEach(function (row) {
-    row.hidden = filter.value !== "all" &&
-                 row.dataset.type !== filter.value;
+filter.addEventListener("change", function(){
+  rows.forEach(function(row){
+    row.hidden = filter.value !== "all" && row.dataset.type !== filter.value;
   });
 });
 </script>
-
 </body>
 </html>
