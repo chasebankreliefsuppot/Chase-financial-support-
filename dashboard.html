@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1930">
+  <title>Nexora Financial | Dashboard</title>
+
+  <style>
+    :root {
+      --navy: #0b1930;
+      --blue: #153d68;
+      --teal: #20c6b2;
+      --light: #f4f7fa;
+      --white: #ffffff;
+      --text: #1b2b40;
+      --muted: #718096;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 245px;
+      height: 100vh;
+      background: var(--navy);
+      color: white;
+      padding: 28px 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 45px;
+    }
+
+    .logo span {
+      color: var(--teal);
+    }
+
+    .nav-label {
+      color: #8291a4;
+      font-size: 11px;
+      margin: 25px 0 12px;
+      letter-spacing: 1px;
+    }
+
+    .menu a {
+      display: block;
+      color: #d5e0ed;
+      padding: 13px;
+      margin-bottom: 7px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .menu a.active,
+    .menu a:hover {
+      background: var(--blue);
+      color: white;
+    }
+
+    .main {
+      margin-left: 245px;
+      padding: 30px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .topbar h1 {
+      font-size: 27px;
+      color: var(--navy);
+    }
+
+    .demo-label {
+      display: inline-block;
+      background: #fff1d6;
+      color: #805600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .welcome {
+      margin-bottom: 25px;
+    }
+
+    .welcome h2 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .welcome p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .balance-card {
+      background: linear-gradient(120deg, var(--navy), var(--blue));
+      color: white;
+      padding: 30px;
+      border-radius: 13px;
+      margin-bottom: 25px;
+    }
+
+    .balance-card small {
+      color: #d5e0ed;
+    }
+
+    .balance {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .balance-card p {
+      color: #c7d5e5;
+      font-size: 12px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 10px;
+      border: 1px solid #e7edf3;
+    }
+
+    .card small {
+      color: var(--muted);
+    }
+
+    .card h3 {
+      margin-top: 12px;
+      font-size: 22px;
+      color: var(--navy);
+    }
+
+    .section {
+      background: white;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 25px;
+      overflow-x: auto;
+    }
+
+    .section h2 {
+      font-size: 19px;
+      margin-bottom: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 500px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 14px 10px;
+      border-bottom: 1px solid #edf1f5;
+      font-size: 13px;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: normal;
+    }
+
+    .credit {
+      color: #078b70;
+      font-weight: bold;
+    }
+
+    .debit {
+      color: #c34a4a;
+      font-weight: bold;
+    }
+
+    .notice {
+      background: #e9f8f5;
+      border-left: 4px solid var(--teal);
+      padding: 17px;
+      border-radius: 5px;
+      color: #24594f;
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      padding: 20px;
+    }
+
+    @media(max-width: 800px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 18px;
+      }
+
+      .logo {
+        margin-bottom: 15px;
+      }
+
+      .nav-label {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .menu a {
+        padding: 9px;
+        font-size: 12px;
+        margin: 0;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 18px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">NEXORA <span>FINANCIAL</span></div>
+
+    <div class="nav-label">MAIN MENU</div>
+
+    <nav class="menu">
+      <a class="active" href="#overview">Overview</a>
+      <a href="#accounts">Demo Accounts</a>
+      <a href="#transactions">Transactions</a>
+      <a href="#insights">Financial Insights</a>
+      <a href="#settings">Settings</a>
+      <a href="index.html">Back to Homepage</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+
+    <div class="topbar">
+      <h1>Dashboard</h1>
+      <span class="demo-label">DEMO ENVIRONMENT</span>
+    </div>
+
+    <div class="welcome" id="overview">
+      <h2>Welcome to Nexora Financial</h2>
+      <p>Your educational financial dashboard.</p>
+    </div>
+
+    <section class="balance-card">
+      <small>SIMULATED TOTAL BALANCE</small>
+      <div class="balance">$25,750.00</div>
+      <p>Fictional demonstration balance — not real money.</p>
+    </section>
+
+    <section class="cards" id="accounts">
+      <div class="card">
+        <small>Demo Checking Account</small>
+        <h3>$12,500.00</h3>
+      </div>
+
+      <div class="card">
+        <small>Demo Savings Account</small>
+        <h3>$10,000.00</h3>
+      </div>
+
+      <div class="card">
+        <small>Demo Investment Account</small>
+        <h3>$3,250.00</h3>
+      </div>
+    </section>
+
+    <section class="section" id="transactions">
+      <h2>Sample Transaction History</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Sample Deposit</td>
+            <td>Nov 20, 2026</td>
+            <td>Credit</td>
+            <td class="credit">+$2,000.00</td>
+          </tr>
+
+          <tr>
+            <td>Sample Purchase</td>
+            <td>Nov 18, 2026</td>
+            <td>Debit</td>
+            <td class="debit">-$250.00</td>
+          </tr>
+
+          <tr>
+            <td>Sample Savings Transfer</td>
+            <td>Nov 15, 2026</td>
+            <td>Credit</td>
+            <td class="credit">+$500.00</td>
+          </tr>
+
+          <tr>
+            <td>Sample Utility Payment</td>
+            <td>Nov 12, 2026</td>
+            <td>Debit</td>
+            <td class="debit">-$120.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="insights">
+      <h2>Financial Insights</h2>
+      <p>
+        Explore financial education, digital payment systems,
+        budgeting, saving, and responsible money management.
+      </p>
+    </section>
+
+    <section class="section" id="settings">
+      <h2>Platform Settings</h2>
+      <p>Independent educational demonstration platform.</p>
+    </section>
+
+    <div class="notice">
+      This dashboard uses fictional sample data. It does not connect to
+      real bank accounts, process payments, or provide financial services.
+      Nexora Financial is independent and unaffiliated with banks or
+      government agencies.
+    </div>
+
+    <footer>
+      © 2026 Nexora Financial — Learn. Simulate. Secure.
+    </footer>
+
+  </main>
+
+</body>
+</html>
