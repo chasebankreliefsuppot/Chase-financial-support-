@@ -1,52 +1,377 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Relief Support</title>
+<meta name="theme-color" content="#102b46">
+
+<title>USA Financial Relief Support</title>
 
 <style>
+:root {
+  --navy: #102b46;
+  --blue: #1769aa;
+  --light: #f4f7fb;
+  --text: #263445;
+  --muted: #68798a;
+  --white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fa;
-  color: #263445;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--text);
   line-height: 1.6;
 }
 
 header {
-  background: #102b46;
-  color: white;
-  padding: 22px 7%;
+  background: var(--white);
+  border-bottom: 1px solid #e5eaf0;
+  padding: 18px 7%;
 }
 
-.header-content {
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
 }
 
 .logo {
-  font-size: 23px;
-  font-weight: bold;
+  color: var(--navy);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
 nav a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
-  margin-left: 22px;
   font-size: 14px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--blue);
 }
 
 .hero {
+  background: linear-gradient(115deg, #102b46, #174f7c);
+  color: white;
+  padding: 95px 7%;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.eyebrow {
+  color: #a9d8ff;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin-top: 18px;
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1.13;
+}
+
+.hero p {
+  max-width: 650px;
+  margin-top: 22px;
+  color: #e2edf7;
+  font-size: 18px;
+}
+
+.primary-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 24px;
+  border-radius: 7px;
+  background: white;
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primary-link:hover {
+  background: #e8f3ff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 65px 25px;
+}
+
+.section-heading {
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-size: 30px;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin-bottom: 32px;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(16,43,70,.04);
+}
+
+.card-number {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.card h3 {
+  margin: 12px 0;
+  color: var(--navy);
+  font-size: 19px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.about-section {
+  background: white;
+  border-top: 1px solid #e5eaf0;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.about-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 65px 25px;
+}
+
+.about-inner p {
+  max-width: 800px;
+  color: var(--muted);
+}
+
+.info-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 25px;
+}
+
+.info-panel {
+  padding: 35px;
+  background: #e8f1f9;
+  border-radius: 12px;
+}
+
+.info-panel h2 {
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.info-panel p {
+  color: #526779;
+}
+
+footer {
+  background: var(--navy);
+  color: #dce8f3;
+  padding: 35px 7%;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer p {
+  margin: 7px 0;
+}
+
+@media (max-width: 750px) {
+  .header-inner {
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 70px 7%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .container,
+  .about-inner,
+  .info-section {
+    padding: 45px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">USA Financial Relief Support</div>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#information">Information</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">Financial information and resources</div>
+
+    <h1>Supporting Financial Stability and New Opportunities</h1>
+
+    <p>
+      Explore financial guidance, assistance information,
+      and educational resources designed to help individuals
+      and families make informed financial decisions.
+    </p>
+
+    <a class="primary-link" href="#services">
+      Explore Our Services
+    </a>
+  </div>
+</section>
+
+<main>
+
+<section class="container" id="services">
+  <h2 class="section-heading">Our Areas of Focus</h2>
+
+  <p class="section-intro">
+    Discover information and resources across important
+    areas of personal and family financial wellbeing.
+  </p>
+
+  <div class="cards">
+
+    <article class="card">
+      <span class="card-number">01 / GUIDANCE</span>
+      <h3>Financial Guidance</h3>
+      <p>
+        Understand financial planning, responsible money
+        management, and ways to make informed decisions.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="card-number">02 / RESOURCES</span>
+      <h3>Support Resources</h3>
+      <p>
+        Explore educational information about financial
+        support resources and assistance options.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="card-number">03 / EDUCATION</span>
+      <h3>Financial Education</h3>
+      <p>
+        Build knowledge about budgeting, saving,
+        financial responsibility, and long-term stability.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <h2 class="section-heading">About Our Initiative</h2>
+
+    <p>
+      Our project focuses on financial awareness,
+      accessible information, and responsible digital
+      services. We aim to demonstrate how clear financial
+      information can help people better understand their
+      options and plan for the future.
+    </p>
+  </div>
+</section>
+
+<section class="info-section" id="information">
+  <div class="info-panel">
+    <h2>Make Informed Financial Decisions</h2>
+
+    <p>
+      Access clear educational information and learn
+      about responsible financial planning and digital
+      financial services.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>USA Financial Relief Support</strong></p>
+
+  <p>
+    Independent educational demonstration.
+    Not affiliated with Chase, JPMorgan Chase,
+    or any US government agency.
+  </p>
+
+  <p>
+    No real banking services, financial accounts,
+    or government assistance applications are offered.
+  </p>
+
+  <p>© 2026 Financial Relief Support</p>
+</footer>
+
+</body>
+</html>
+
   background: linear-gradient(120deg, #102b46, #1769aa);
   color: white;
   padding: 85px 8%;
